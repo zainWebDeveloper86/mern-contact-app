@@ -2,7 +2,7 @@
 
 # 📌 Project Overview
 
-Project Name: Contact App
+Project Name: Contact App<br>
 Project Type: (Full Stack MERN App / API / etc)
 Purpose: For Practice Full Flow
 
