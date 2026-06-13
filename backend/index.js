@@ -33,9 +33,9 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // }))
 
 app.use(cors({
-  origin: "*",
+  origin: "https://contact-app-zain.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: false  // ← yeh false karo jab origin * ho
+  credentials: true
 }))
 
 //Middleware for routes
