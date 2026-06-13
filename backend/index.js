@@ -33,19 +33,10 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // }))
 
 app.use(cors({
-  origin: function(origin, callback) {
-    const allowedOrigins = [
-      "https://contact-app-zain.vercel.app"
-    ];
-    if (!origin || allowedOrigins.indexOf(origin) !== -1 || origin.endsWith(".vercel.app")) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+  credentials: false  // ← yeh false karo jab origin * ho
+}))
 
 //Middleware for routes
 app.use("/api/users",userRouter)
