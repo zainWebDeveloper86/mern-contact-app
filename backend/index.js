@@ -26,11 +26,21 @@ app.use(express.json());
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+// app.use(cors({
+//   origin: "https://contact-app-zain.vercel.app",
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   credentials: true
+// }))
+
 app.use(cors({
-  origin: "https://contact-app-zain.vercel.app",
+  origin: [
+    "https://contact-app-zain.vercel.app",
+    /\.vercel\.app$/  // sare vercel URLs allow
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }))
+
 //Middleware for routes
 app.use("/api/users",userRouter)
 
